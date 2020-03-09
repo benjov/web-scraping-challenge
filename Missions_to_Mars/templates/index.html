@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mision to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel = "stylesheet" type = "text/css" media = "screen" href = "style.css"/>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+    <div class = "container">
+      <h2>Latest Mars News</h2>
+      <h4>{{ Latest_New.news_title }}</h4>
+      <p>{{ Latest_New.news_p }}</p>
+    </div>
+  </div>
+
+<!--DIVIDER ROWS-->
+<div class = "container">
+  <div class = "row">
+      <div class = "col-md-7">
+          <div class = "side-box">
+              <h2>Featured Mars Image</h2>
+              <hr>
+              <div id = "main_image">
+                  <img src = {{ featured_image.image }} alt = "JPL Mars Space Images - Featured Image" height = "350">
+              </div>
+          </div>
+      </div>
+      <div class = "col-md-5">
+          <div class = "side-box">
+            <div class="card">
+              <div class="card-body">
+                <h3>Current Weather on Mars</h3>
+                <p>{{ mars_weather.weather }}</p>
+              </div>
+            </div>
+            <hr>
+            <div>
+                <h3>Mars Facts</h3>
+
+                {{ mars_facts.facts | safe }}
+                
+            </div>
+            <hr>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!--DIVIDER ROWS-->
+<div class = "container" style = "background-color:black" >
+  <div class = "row">
+      <div class = "col-md-12">
+          <div class = "main-box whiteback">
+            <hr>
+              <h2 class = "main-pg-header text-center">Mars Hemispheres</h2>
+            <hr>
+              <div class = "summary txt">
+                  <div class = "row">
+                      <div class = "col-sm-5 col-md-6">
+                        <a>
+                          <img src = {{ mars_hemispheres.url_1 }} class = "center" height = "400">
+                        </a>
+                        <h3 class = "text-center">{{ mars_hemispheres.title_1 }}</h3>
+                      </div>
+                      <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                        <a>
+                          <img src = {{ mars_hemispheres.url_2 }} class = "center" height = "400">
+                        </a>
+                        <h3 class = "text-center">{{ mars_hemispheres.title_2 }}</h3>
+                      </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                      <div class="col-sm-6 col-md-5 col-lg-6">
+                        <a>
+                          <img src = {{ mars_hemispheres.url_3 }} class = "center" height = "400">
+                        </a>
+                        <h3 class = "text-center">{{ mars_hemispheres.title_3 }}</h3>
+                      </div>
+                      <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
+                        <a>
+                          <img src = {{ mars_hemispheres.url_4 }} class = "center" height = "400">
+                        </a>
+                        <h3 class = "text-center">{{ mars_hemispheres.title_4 }}</h3>
+                      </div>
+                  </div>
+              </div>
+              <hr>
+          </div>
+      </div>                
+  </div>
+</div>
+
+</body>
+
+</html>
